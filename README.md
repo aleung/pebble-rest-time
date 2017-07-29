@@ -1,6 +1,6 @@
 # Rest Time
 
-A Pebble app that reminds you to rest.
+A Pebble app that reminds you to rest. Enhanced base on [mattd/rest-time](https://github.com/mattd/rest-time).
 
 ### What's new
 
