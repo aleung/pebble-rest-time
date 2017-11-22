@@ -4,6 +4,9 @@ A Pebble app that reminds you to rest. Enhanced base on [mattd/rest-time](https:
 
 ### What's new
 
+- v2.2
+  Colorful UI.
+
 - v2.1
   Keep timer running after app exists.
 
