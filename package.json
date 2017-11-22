@@ -9,14 +9,7 @@
         "messageKeys": [],
         "projectType": "native",
         "resources": {
-            "media": [
-                {
-                    "file": "images/menu_icon.png",
-                    "menuIcon": true,
-                    "name": "IMAGE_MENU_ICON",
-                    "type": "png"
-                }
-            ]
+            "media": []
         },
         "sdkVersion": "3",
         "targetPlatforms": [
@@ -28,5 +21,5 @@
             "watchface": false
         }
     },
-    "version": "2.1.0"
+    "version": "2.2.0"
 }

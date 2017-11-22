@@ -8,10 +8,10 @@
 #define PERSIST_WARNING_VIBRATION 30
 #define PERSIST_OVERRUNABLE 40
 
-#define DEFAULT_WORK_INTERVAL 1500
-#define DEFAULT_REST_INTERVAL 120
-#define DEFAULT_WARNING_VIBRATION false
-#define DEFAULT_OVERRUNABLE false
+#define DEFAULT_WORK_INTERVAL 1800
+#define DEFAULT_REST_INTERVAL 300
+#define DEFAULT_WARNING_VIBRATION true
+#define DEFAULT_OVERRUNABLE true
 
 #define NUM_MENU_SECTIONS 1
 #define NUM_MENU_ITEMS 4
@@ -186,26 +186,26 @@ static void build_menu() {
 
 static void set_colors() {
     if (s_in_rest_mode) {
-        window_set_background_color(s_main_window, GColorWhite);
+        window_set_background_color(s_main_window, GColorGreen  );
 
-        text_layer_set_background_color(s_clock_layer, GColorWhite);
-        text_layer_set_text_color(s_clock_layer, GColorBlack);
+        text_layer_set_background_color(s_clock_layer, GColorGreen   );
+        text_layer_set_text_color(s_clock_layer, GColorBlack );
 
-        text_layer_set_background_color(s_countdown_layer, GColorWhite);
-        text_layer_set_text_color(s_countdown_layer, GColorBlack);
+        text_layer_set_background_color(s_countdown_layer, GColorGreen   );
+        text_layer_set_text_color(s_countdown_layer, GColorBlack );
 
-        text_layer_set_background_color(s_paused_indicator_layer, GColorWhite);
-        text_layer_set_text_color(s_paused_indicator_layer, GColorBlack);
+        text_layer_set_background_color(s_paused_indicator_layer, GColorGreen   );
+        text_layer_set_text_color(s_paused_indicator_layer, GColorBlack );
     } else {
-        window_set_background_color(s_main_window, GColorBlack);
+        window_set_background_color(s_main_window, GColorBlueMoon );
 
-        text_layer_set_background_color(s_clock_layer, GColorBlack);
+        text_layer_set_background_color(s_clock_layer, GColorBlueMoon );
         text_layer_set_text_color(s_clock_layer, GColorWhite);
 
-        text_layer_set_background_color(s_countdown_layer, GColorBlack);
+        text_layer_set_background_color(s_countdown_layer, GColorBlueMoon );
         text_layer_set_text_color(s_countdown_layer, GColorWhite);
 
-        text_layer_set_background_color(s_paused_indicator_layer, GColorBlack);
+        text_layer_set_background_color(s_paused_indicator_layer, GColorBlueMoon );
         text_layer_set_text_color(s_paused_indicator_layer, GColorWhite);
     }
 }
@@ -245,6 +245,8 @@ static void update_pause_indicator_layer() {
     } else {
         if (s_countdown_seconds < 0) {
             text_layer_set_text(s_paused_indicator_layer, "Overrun");
+            text_layer_set_background_color(s_paused_indicator_layer, GColorRed );
+            text_layer_set_text_color(s_paused_indicator_layer, GColorWhite);
         } else {
             text_layer_set_text(s_paused_indicator_layer, "");
         }      
